@@ -1,0 +1,52 @@
+---
+title: "Rmarkdown Template"
+output:
+  html_document:
+    fig_caption: yes
+    theme: cerulean
+    toc: yes
+    toc_depth: 3
+    toc_float: yes
+---
+
+# This is main landing page {.tabset}
+
+## First Tab {.tabset}
+
+> This is a simple R markdown template for you to use to get started.
+
+1. Fork this repository and give it your own name
+2. Create a new R project from version control using the URL from your newly created (forked) repository.
+
+## Text formatting {.tabset}
+
+*italic*  or _italic_
+**bold**   __bold__
+`code`
+superscript^2^ and subscript~2~
+
+
+Lists {.tabset}
+------------------------------------------------------------
+
+*   Bulleted list item 1
+
+*   Item 2
+
+    * Item 2a
+
+    * Item 2b
+
+1.  Numbered list item 1
+
+1.  Item 2. The numbers are incremented automatically in the output.
+
+Tables {.tabset}
+------------------------------------------------------------
+
+First Header  | Second Header
+------------- | -------------
+Content Cell  | Content Cell
+Content Cell  | Content Cell
+
+
