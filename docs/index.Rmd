@@ -3,50 +3,67 @@ title: "Rmarkdown Template"
 output:
   html_document:
     fig_caption: yes
-    theme: cerulean
+    theme: flatly
     toc: yes
     toc_depth: 3
     toc_float: yes
 ---
 
-# This is main landing page {.tabset}
+1.  Fork this repository and give it your own name
+2.  Create a new R project from version control using the URL from your newly created (forked) repository.
 
-## First Tab {.tabset}
+# YAML Settungs {#section-1}
 
-> This is a simple R markdown template for you to use to get started.
-
-1. Fork this repository and give it your own name
-2. Create a new R project from version control using the URL from your newly created (forked) repository.
-
-## Text formatting {.tabset}
-
-*italic*  or _italic_
-**bold**   __bold__
-`code`
-superscript^2^ and subscript~2~
+> global markdown options here
 
 
-Lists {.tabset}
-------------------------------------------------------------
 
-*   Bulleted list item 1
+# Section 2 (basic formatting) {#section-2 .tabset}
 
-*   Item 2
+## Text formatting
 
-    * Item 2a
+*italic* or **bold** `code` superscript^2^ and subscript~2~
 
-    * Item 2b
+## Lists
+
+-   Bulleted list item 1
+
+-   Item 2
+
+    -   Item 2a
+
+    -   Item 2b
 
 1.  Numbered list item 1
 
-1.  Item 2. The numbers are incremented automatically in the output.
+2.  Item 2. The numbers are incremented automatically in the output.
 
-Tables {.tabset}
-------------------------------------------------------------
+## Tables
 
-First Header  | Second Header
-------------- | -------------
-Content Cell  | Content Cell
-Content Cell  | Content Cell
+> Creating tables by hand.
 
+| First Header | Second Header |
+|--------------|---------------|
+| Content Cell | Content Cell  |
+| Content Cell | Content Cell  |
 
+# Section 3 (not sure yet) {#section-3}
+
+# Section 4 (figure captions) {#section-4}
+
+------------------------------------------------------------------------
+
+Specify the caption of your figure in the chunk header. Example:
+
+```{r, eval=FALSE}
+{r, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Here is a really important caption."}
+```
+
+```{r, message=FALSE, warning=FALSE, fig.align="center", fig.width=6, fig.height=6, fig.cap="Figure: Here is a really important caption."}
+library(tidyverse)
+mpg %>%
+  ggplot( aes(x=reorder(class, hwy), y=hwy, fill=class)) + 
+    geom_boxplot() +
+    xlab("class") +
+    theme(legend.position="none")
+```
